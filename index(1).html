@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff75ae">
+<title>Mixue Pinky — Pesan Minuman</title>
+<style>
+:root{--pink:#ff6fae;--pink2:#ffb8d7;--pale:#fff0f7;--cream:#fffafc;--ink:#54394a;--muted:#98798b;--white:#fff;--shadow:0 12px 30px #e879a51c}
+*{box-sizing:border-box}body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;background:linear-gradient(135deg,#fff4f9,#ffe3f0 48%,#fff8fc);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:1120px;margin:auto;padding:20px}
+header{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:12px 0 22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem}.logo{width:48px;height:48px;border-radius:17px;background:linear-gradient(145deg,#ff8fc1,#ff5ca3);display:grid;place-items:center;color:white;font-size:26px;box-shadow:0 7px 15px #ff7ab044}.brand small{display:block;color:var(--muted);font-size:.7rem;letter-spacing:1.4px;margin-top:3px}.cart-pill{background:white;border:1px solid #ffd0e4;border-radius:999px;padding:11px 16px;color:var(--ink);font-weight:800;box-shadow:var(--shadow)}.hero{position:relative;overflow:hidden;border-radius:30px;padding:32px;background:linear-gradient(115deg,#ffb4d4,#ff80b7 65%,#ff9fc8);color:white;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 18px 35px #ff82b52e}.hero h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.04;margin:0 0 12px;max-width:550px}.hero p{margin:0 0 18px;max-width:470px;line-height:1.6;color:#fff8fb}.hero .tag{display:inline-block;background:#ffffff40;padding:7px 12px;border-radius:99px;font-size:.8rem;font-weight:bold;margin-bottom:15px}.hero-art{font-size:clamp(5rem,14vw,9rem);filter:drop-shadow(0 10px 7px #9b31512a);transform:rotate(7deg);padding-right:15px}.hero-deco{position:absolute;border-radius:50%;background:#ffffff20;width:150px;height:150px;right:16%;top:-85px}.searchrow{display:flex;gap:12px;margin:24px 0 18px;flex-wrap:wrap}.searchbox{flex:1;min-width:190px;position:relative}.searchbox input{width:100%;padding:14px 17px;border:1px solid #f7c9dd;border-radius:15px;background:#fffdfedb;outline:none;color:var(--ink)}.searchbox input:focus{border-color:var(--pink);box-shadow:0 0 0 3px #ff6fae22}select{padding:13px 15px;border-radius:15px;border:1px solid #f7c9dd;background:white;color:var(--ink);min-width:155px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:24px 0 15px}.sectionhead h2{margin:0;font-size:1.5rem}.sectionhead p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.categories{display:flex;gap:9px;overflow:auto;padding:2px 0 8px}.cat{white-space:nowrap;padding:10px 15px;border-radius:999px;background:white;border:1px solid #f8d4e4;color:var(--ink);font-weight:700}.cat.active,.primary{background:var(--pink);color:white;border-color:var(--pink)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.product{background:#fffdfef0;border:1px solid #ffe0ed;border-radius:23px;padding:15px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 15px 30px #e879a529}.drinkpic{height:135px;border-radius:17px;background:linear-gradient(145deg,#fff0f7,#ffe1ef);display:grid;place-items:center;font-size:4.3rem;position:relative;margin-bottom:13px}.drinkpic span{filter:drop-shadow(0 6px 4px #c25b7a20)}.badge{position:absolute;left:9px;top:9px;font-size:.68rem;font-weight:900;background:white;color:#e85b99;border-radius:99px;padding:5px 8px}.product h3{font-size:1rem;margin:0 0 6px}.product .desc{font-size:.82rem;line-height:1.4;color:var(--muted);margin:0 0 12px;min-height:34px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-size:1rem;font-weight:900;color:#e85496}.add{width:36px;height:36px;border-radius:12px;background:#ffe0ee;color:#df4c8d;font-size:1.3rem;font-weight:900}.add:hover{background:var(--pink);color:white}.empty{grid-column:1/-1;text-align:center;background:white;padding:30px;border-radius:20px;color:var(--muted)}.bottom{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin:28px 0}.panel{background:#fffdfef0;border:1px solid #ffe0ed;border-radius:24px;padding:20px;box-shadow:var(--shadow)}.panel h2{margin:0 0 15px;font-size:1.25rem}.cart-empty{padding:20px 0;color:var(--muted);text-align:center}.cartitem{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px dashed #f3cadd}.cartitem strong{display:block;font-size:.9rem}.cartitem small{color:var(--muted)}.qty{display:flex;align-items:center;gap:9px;margin-top:7px}.qty button{width:25px;height:25px;border-radius:8px;background:#ffe1ef;color:#d94e8d;font-weight:900}.lineprice{font-weight:800;font-size:.9rem}.totalrow{display:flex;justify-content:space-between;padding-top:15px;margin-top:8px;font-weight:900;font-size:1.05rem}.primary{width:100%;padding:14px;border-radius:14px;font-weight:900;margin-top:15px}.primary:hover{background:#f2529a}.field{display:block;margin-bottom:12px}.field span{display:block;font-size:.82rem;font-weight:800;margin-bottom:6px}.field input,.field select{width:100%;padding:12px;border:1px solid #f4c8dc;border-radius:12px;background:white;color:var(--ink)}.notice{font-size:.77rem;line-height:1.5;color:var(--muted);margin:12px 0 0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#54394a;color:white;padding:12px 18px;border-radius:99px;box-shadow:var(--shadow);z-index:5;opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1}.receipt{white-space:pre-wrap;background:#fff4f9;border-radius:14px;padding:14px;margin-top:14px;font-size:.85rem;display:none;line-height:1.55}.receipt.show{display:block}footer{text-align:center;color:var(--muted);padding:10px 0 28px;font-size:.8rem}footer b{color:#e65a98}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:25px}.hero-art{font-size:5rem;padding:0}.bottom{grid-template-columns:1fr}.wrap{padding:14px}.product{padding:11px}.drinkpic{height:115px;font-size:3.6rem}}
+@media(max-width:430px){.grid{gap:10px}.hero-art{display:none}.hero h1{font-size:2.4rem}.sectionhead h2{font-size:1.25rem}.product .desc{min-height:48px}.cart-pill{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">❄</div><div>mixue <span style="color:#f15a9b">pinky!</span><small>ICE CREAM & FRESH TEA</small></div></div>
+  <button class="cart-pill" onclick="document.querySelector('#keranjang').scrollIntoView({behavior:'smooth'})">🛍️ Keranjang <span id="cartCount">0</span></button>
+</header>
+<section class="hero">
+  <div class="hero-deco"></div>
+  <div><span class="tag">♡ SWEET MOMENTS EVERY DAY ♡</span><h1>Manisnya hari,<br>sesegar Mixue!</h1><p>Pilih minuman favoritmu, tambahkan ke keranjang, lalu buat pesanan dengan mudah. Yuk, manjakan harimu! 🍓</p></div>
+  <div class="hero-art">🧋🍓</div>
+</section>
+<div class="searchrow">
+  <div class="searchbox"><input id="search" type="search" placeholder="🔎 Cari minuman favorit..." aria-label="Cari minuman"></div>
+  <select id="sort" aria-label="Urutkan harga"><option value="default">Urutkan: pilihan</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="az">Nama A–Z</option></select>
+</div>
+<div class="sectionhead"><div><h2>Menu gemas kita 🌷</h2><p>Pilih yang bikin mood kamu happy!</p></div></div>
+<div class="categories" id="categories">
+  <button class="cat active" data-cat="Semua">✨ Semua</button><button class="cat" data-cat="Fruit Tea">🍓 Fruit Tea</button><button class="cat" data-cat="Milk Tea">🧋 Milk Tea</button><button class="cat" data-cat="Tea">🍵 Tea</button><button class="cat" data-cat="Coffee">☕ Coffee</button><button class="cat" data-cat="Sundae">🍦 Sundae</button><button class="cat" data-cat="Fresh Ice Cream">🍨 Ice Cream</button>
+</div>
+<div class="grid" id="menu"></div>
+<section class="bottom">
+  <div class="panel" id="keranjang">
+    <h2>🛍️ Keranjang belanja</h2>
+    <div id="cartItems"><div class="cart-empty">Keranjangmu masih kosong nih ♡<br>Pilih minuman favorit dulu, ya!</div></div>
+    <div class="totalrow"><span>Total</span><span id="total">Rp0</span></div>
+    <p class="notice">Harga pada aplikasi ini adalah contoh estimasi untuk demo dan dapat berbeda dari harga gerai Mixue. Ongkir belum termasuk.</p>
+  </div>
+  <div class="panel">
+    <h2>💌 Detail pesanan</h2>
+    <label class="field"><span>Nama pemesan</span><input id="customer" placeholder="Nama kamu..." maxlength="60"></label>
+    <label class="field"><span>Metode pesanan</span><select id="method"><option value="Ambil di gerai">Ambil di gerai</option><option value="Antar (simulasi)">Antar (simulasi)</option></select></label>
+    <label class="field"><span>Catatan (opsional)</span><input id="note" placeholder="Contoh: less ice, less sugar..." maxlength="120"></label>
+    <button class="primary" onclick="checkout()">💗 Buat pesanan</button>
+    <div id="receipt" class="receipt"></div>
+    <p class="notice">Ini demo pemesanan lokal, bukan aplikasi resmi Mixue. Pesanan tidak dikirim ke gerai.</p>
+  </div>
+</section>
+<footer>Dibuat dengan <b>♡</b> dan banyak pink · <b>Mixue Pinky</b><br>Menu dan harga dapat berubah sesuai gerai.</footer>
+</div>
+<div class="toast" id="toast">Ditambahkan ke keranjang ♡</div>
+<script>
+const products = [
+ {id:1,name:"Fresh Squeezed Lemonade",cat:"Fruit Tea",price:10000,emoji:"🍋",desc:"Lemon segar dengan rasa asam manis.",badge:"Fresh!"},
+ {id:2,name:"Passion Fruit Tea",cat:"Fruit Tea",price:22000,emoji:"🥭",desc:"Teh buah tropis yang menyegarkan.",badge:"Favorit"},
+ {id:3,name:"Peach Tea",cat:"Fruit Tea",price:18000,emoji:"🍑",desc:"Teh dengan aroma buah peach yang lembut."},
+ {id:4,name:"Hawaiian Fruit Tea",cat:"Fruit Tea",price:22000,emoji:"🍍",desc:"Perpaduan rasa buah tropis yang ceria."},
+ {id:5,name:"Original Jasmine Tea",cat:"Tea",price:10000,emoji:"🍵",desc:"Teh melati ringan dan harum."},
+ {id:6,name:"Earl Grey Tea",cat:"Tea",price:12000,emoji:"🫖",desc:"Teh klasik dengan aroma khas."},
+ {id:7,name:"Milk Tea",cat:"Milk Tea",price:19000,emoji:"🧋",desc:"Teh susu creamy untuk teman santai.",badge:"Best seller"},
+ {id:8,name:"Pearl Milk Tea",cat:"Milk Tea",price:22000,emoji:"🧋",desc:"Milk tea dengan topping pearl kenyal."},
+ {id:9,name:"Oats Milk Tea",cat:"Milk Tea",price:22000,emoji:"🥤",desc:"Milk tea dengan topping oat."},
+ {id:10,name:"Brown Sugar Pearl Milk Tea",cat:"Milk Tea",price:24000,emoji:"🤎",desc:"Manis gula merah dengan pearl."},
+ {id:11,name:"Mocha Smoothie",cat:"Coffee",price:19000,emoji:"☕",desc:"Kopi dan cokelat dalam minuman dingin."},
+ {id:12,name:"Coffee Smoothie",cat:"Coffee",price:19000,emoji:"🧋",desc:"Sensasi kopi dingin yang creamy."},
+ {id:13,name:"Strawberry Mi-Shake",cat:"Fresh Ice Cream",price:16000,emoji:"🍓",desc:"Minuman stroberi creamy dan manis."},
+ {id:14,name:"Mango Mi-Shake",cat:"Fresh Ice Cream",price:16000,emoji:"🥭",desc:"Mangga tropis dengan tekstur lembut."},
+ {id:15,name:"Oreo Mi-Shake",cat:"Fresh Ice Cream",price:16000,emoji:"🍪",desc:"Rasa cookies yang creamy."},
+ {id:16,name:"Chocolate Mi-Shake",cat:"Fresh Ice Cream",price:16000,emoji:"🍫",desc:"Cokelat manis untuk mood ceria."},
+ {id:17,name:"Mango Sundae",cat:"Sundae",price:16000,emoji:"🍨",desc:"Es krim lembut dengan saus mangga.",badge:"Sweet"},
+ {id:18,name:"Strawberry Sundae",cat:"Sundae",price:16000,emoji:"🍓",desc:"Es krim vanilla dengan saus stroberi."},
+ {id:19,name:"Oreo Sundae",cat:"Sundae",price:16000,emoji:"🍦",desc:"Es krim dengan taburan Oreo."},
+ {id:20,name:"Boba Sundae",cat:"Sundae",price:16000,emoji:"🍨",desc:"Es krim vanilla dan boba kenyal."},
+ {id:21,name:"Chocolate Sundae",cat:"Sundae",price:16000,emoji:"🍫",desc:"Es krim vanilla dengan saus cokelat."},
+ {id:22,name:"Lucky Sundae Strawberry",cat:"Sundae",price:18000,emoji:"🍧",desc:"Sundae stroberi dengan topping pilihan."},
+ {id:23,name:"Lucky Sundae Chocolate",cat:"Sundae",price:18000,emoji:"🍨",desc:"Sundae cokelat dengan topping pilihan."},
+ {id:24,name:"Ice Cream Cone",cat:"Fresh Ice Cream",price:8000,emoji:"🍦",desc:"Es krim cone klasik yang lembut."},
+ {id:25,name:"Ice Cream Cup",cat:"Fresh Ice Cream",price:10000,emoji:"🍨",desc:"Es krim vanilla dalam cup praktis."}
+];
+let activeCat="Semua", cart={};
+const rupiah=n=>"Rp"+n.toLocaleString("id-ID");
+function renderMenu(){
+ const q=document.getElementById("search").value.toLowerCase().trim(), sort=document.getElementById("sort").value;
+ let list=products.filter(p=>(activeCat==="Semua"||p.cat===activeCat)&&(p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);if(sort==="high")list.sort((a,b)=>b.price-a.price);if(sort==="az")list.sort((a,b)=>a.name.localeCompare(b.name));
+ const menu=document.getElementById("menu");
+ if(!list.length){menu.innerHTML='<div class="empty">Yah, minuman belum ditemukan 🥺<br>Coba kata kunci lain, ya!</div>';return}
+ menu.innerHTML=list.map(p=>`<article class="product"><div class="drinkpic">${p.badge?`<span class="badge">${p.badge}</span>`:""}<span>${p.emoji}</span></div><h3>${p.name}</h3><p class="desc">${p.desc}</p><div class="price-row"><span class="price">${rupiah(p.price)}</span><button class="add" aria-label="Tambah ${p.name}" onclick="addToCart(${p.id})">+</button></div></article>`).join("");
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();showToast("Ditambahkan ke keranjang ♡")}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+ const entries=Object.entries(cart), count=entries.reduce((s,[,q])=>s+q,0), total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0);
+ document.getElementById("cartCount").textContent=count;document.getElementById("total").textContent=rupiah(total);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{const p=products.find(x=>x.id==id);return `<div class="cartitem"><div><strong>${p.emoji} ${p.name}</strong><small>${rupiah(p.price)} / item</small><div class="qty"><button onclick="changeQty(${id},-1)" aria-label="Kurangi">−</button><span>${q}</span><button onclick="changeQty(${id},1)" aria-label="Tambah">+</button></div></div><div class="lineprice">${rupiah(p.price*q)}</div></div>`}).join(""):'<div class="cart-empty">Keranjangmu masih kosong nih ♡<br>Pilih minuman favorit dulu, ya!</div>';
+}
+let toastTimer;
+function showToast(message){const t=document.getElementById("toast");t.textContent=message;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),1800)}
+function checkout(){
+ const entries=Object.entries(cart), name=document.getElementById("customer").value.trim(), method=document.getElementById("method").value, note=document.getElementById("note").value.trim(), receipt=document.getElementById("receipt");
+ if(!entries.length){showToast("Pilih minuman dulu, ya ♡");return}
+ if(!name){document.getElementById("customer").focus();showToast("Isi nama pemesan dulu, ya ♡");return}
+ const total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0);
+ const lines=entries.map(([id,q])=>{const p=products.find(x=>x.id==id);return `• ${p.name} x${q} — ${rupiah(p.price*q)}`});
+ receipt.textContent=`♡ RINGKASAN PESANAN ♡\nNama: ${name}\nMetode: ${method}\n\n${lines.join("\n")}\n\nTOTAL: ${rupiah(total)}\nCatatan: ${note||"-"}\n\nPesanan demo berhasil dibuat! Ini bukan pesanan resmi dan belum dikirim ke gerai.`;receipt.classList.add("show");showToast("Ringkasan pesanan siap ♡");
+}
+document.getElementById("search").addEventListener("input",renderMenu);
+document.getElementById("sort").addEventListener("change",renderMenu);
+document.getElementById("categories").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;activeCat=b.dataset.cat;document.querySelectorAll(".cat").forEach(x=>x.classList.toggle("active",x===b));renderMenu()});
+renderMenu();renderCart();
+</script>
+</body>
+</html>
